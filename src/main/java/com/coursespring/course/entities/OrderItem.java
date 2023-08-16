@@ -14,6 +14,11 @@ import jakarta.persistence.Table;
 public class OrderItem implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	/* A annotation @EmbeddedId é usada para indicar que uma classe
+	 * incorporável (marcada com @Embeddable) está sendo usada como
+	 * chave primária de uma entidade. Isso permite que você use uma
+	 * classe personalizada como chave primária composta, em vez de
+	 * apenas um atributo simples. */
 	@EmbeddedId
 	private OrderItemPK id;
 	

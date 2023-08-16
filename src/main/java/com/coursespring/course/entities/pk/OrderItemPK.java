@@ -10,6 +10,12 @@ import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
+/* A annotation @Embeddable é usada para marcar uma classe como
+ * uma classe incorporável. Uma classe incorporável é uma classe
+ * que representa um componente que é armazenado dentro de outra
+ * entidade (classe principal). Essa classe incorporável geralmente
+ * não tem uma identidade própria no banco de dados e é usada como
+ * parte dos atributos de uma entidade. */
 @Embeddable
 public class OrderItemPK implements Serializable {
 	private static final long serialVersionUID = 1L;
