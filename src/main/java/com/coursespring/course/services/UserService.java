@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.coursespring.course.entities.User;
 import com.coursespring.course.repositories.UserRepository;
+import com.coursespring.course.services.exceptions.ResourceNotFoundException;
 
 //É preciso registrar o UserService como um componente Spring
 //para que a injeção de dependência automática possa ser feita
@@ -23,7 +24,7 @@ public class UserService {
 	
 	public User findById(Long id) {
 		Optional<User> obj = repository.findById(id);
-		return obj.get();
+		return obj.orElseThrow(() -> new ResourceNotFoundException(id));
 	}
 	
 	public User insert(User obj) {
